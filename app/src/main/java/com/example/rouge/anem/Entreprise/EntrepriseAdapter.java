@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.rouge.anem.Entity.Entreprise;
 import com.example.rouge.anem.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,13 +19,28 @@ import java.util.List;
 
 public class EntrepriseAdapter extends BaseAdapter {
     private List<Entreprise> listEntreprise;
+    private List<Entreprise> initialListEntreprise;
     private LayoutInflater layoutInflater;
 
     public EntrepriseAdapter(Context context, List<Entreprise> vListEntreprise) {
         layoutInflater = LayoutInflater.from(context);
-        setListEntreprise(vListEntreprise);
-
+        setInitialListEntreprise(vListEntreprise);
     }
+
+    public void rechercher(String search){
+        this.listEntreprise = new ArrayList<>() ;
+        if(!search.isEmpty()) {
+            for (Entreprise e : initialListEntreprise) {
+                if (e.getNom() != null && e.getNom().toUpperCase().contains(search.toUpperCase()) || e.getAdresse() != null && e.getAdresse().toUpperCase().contains(search.toUpperCase())) {
+                    listEntreprise.add(e);
+                }
+            }
+        }else{
+                listEntreprise = initialListEntreprise;
+        }
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         return getListEntreprise().size();
@@ -62,7 +78,18 @@ public class EntrepriseAdapter extends BaseAdapter {
     }
 
     public void setListEntreprise(List<Entreprise> listEntreprise) {
-        this.listEntreprise = listEntreprise;
+        this.listEntreprise = new ArrayList<>();
+        this.listEntreprise.addAll(listEntreprise);
+        notifyDataSetChanged();
+    }
+
+    public List<Entreprise> getInitialListEntreprise() {
+        return initialListEntreprise;
+    }
+
+    public void setInitialListEntreprise(List<Entreprise> initialListEntreprise) {
+        this.initialListEntreprise = initialListEntreprise;
+        setListEntreprise(initialListEntreprise);
     }
 
     private class ViewHolder {

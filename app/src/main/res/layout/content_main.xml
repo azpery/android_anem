@@ -6,121 +6,198 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:showIn="@layout/app_bar_main"
     android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical" android:layout_width="fill_parent"
-        android:layout_height="fill_parent" android:weightSum="100">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
 
-        <LinearLayout android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="50">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0">
 
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/shop"
-                    android:id="@+id/imageButton"
-                    android:layout_weight="1"
-                    android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
-                    android:contentDescription="Boutique"
-                    android:text="This text is below the image"
-                    android:scaleType="fitCenter" />
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/logo"
+                android:id="@+id/anem"
+                android:layout_weight="1"
+                android:background="#C0392B"
+                android:tint="@android:color/white"
+                android:contentDescription="Boutique"
+                android:elevation="0dp"
+                android:scaleType="fitCenter"
+                android:onClick="openShop"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
 
-                <TextView
-                    android:text="Boutique"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView5"
-                    android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_assignment_ind_black_24dp"
-                    android:id="@+id/btnUtilisateur"
-                    android:layout_weight="1"
-                    android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
-                    android:contentDescription="Boutique"
-                    android:text="This text is below the image"
-                    android:scaleType="fitCenter" />
-
-                <TextView
-                    android:text="Contacts"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView6"
-                    android:textAlignment="center" />
-            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="50">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:paddingTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/shop"
+                            android:id="@+id/imageButton"
+                            android:layout_weight="1"
+                            android:background="@color/blouje"
+                            android:tint="@android:color/white"
+                            android:contentDescription="Boutique"
+                            android:scaleType="fitCenter" />
+
+            <TextView
+                android:text="Boutique"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_domain_black_24dp"
-                    android:id="@+id/btnEntreprise"
-                    android:layout_weight="1"
-                    android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
-                    android:contentDescription="Boutique"
-                    android:text="This text is below the image"
-                    android:scaleType="fitCenter" />
-
-                <TextView
-                    android:text="Entreprise"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv"
-                    android:textAlignment="center" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_assignment_black_24dp"
-                    android:id="@+id/btnStage"
-                    android:layout_weight="1"
-                    android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
-                    android:contentDescription="Boutique"
-                    android:text="This text is below the image"
-                    android:scaleType="fitCenter" />
-
-                <TextView
-                    android:text="Contacts"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView8"
-                    android:textAlignment="center" />
-            </LinearLayout>
+                android:layout_weight="1"
+                android:id="@+id/textView5"
+                android:textSize="25sp"
+                android:background="@color/blouje"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:gravity="center"/>
         </LinearLayout>
-</LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:paddingTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/ic_assignment_ind_black_24dp"
+                            android:id="@+id/btnUtilisateur"
+                            android:layout_weight="1"
+                            android:background="@color/jourange"
+                            android:tint="@android:color/white"
+                            android:contentDescription="Boutique"
+                            android:text="This text is below the image"
+                            android:scaleType="fitCenter" />
+
+            <TextView
+                android:text="Contact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView6"
+                android:background="@color/jourange"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:paddingTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_assignment_black_24dp"
+                android:id="@+id/btnStage"
+                android:layout_weight="1"
+                android:background="@color/orouge"
+                android:tint="@android:color/white"
+                android:contentDescription="Boutique"
+                android:text="This text is below the image"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:text="Stage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView8"
+                android:background="@color/orouge"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_domain_black_24dp"
+                android:id="@+id/btnEntreprise"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:tint="@android:color/white"
+                android:contentDescription="Boutique"
+                android:text="This text is below the image"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:text="Entreprise"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tv"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

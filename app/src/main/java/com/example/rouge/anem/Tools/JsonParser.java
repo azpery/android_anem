@@ -64,18 +64,28 @@ public class JsonParser {
                     try{
                         reader.beginArray();
                         try{
-                            val.put(name, readMessage(reader));
+                            ArrayList<HashMap<String,Object>> vreturn = new ArrayList<>();
+                            while (reader.hasNext()) {
+                                vreturn.add(readMessage(reader));
+                            }
+                            val.put(name, vreturn);
                         }catch(IllegalStateException f) {
 
+                        }finally {
+                            reader.endArray();
                         }
-                        reader.endArray();
+
                     }catch(IllegalStateException f){
                         val.put(name, readMessage(reader));
                     }
                 }
             }
         }
-        reader.endObject();
+        try {
+            reader.endObject();
+        }catch (IllegalStateException e){
+            reader.endArray();
+        }
         return val;
     }
 

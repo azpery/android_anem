@@ -40,6 +40,8 @@
     <string name="SpinnerCoursLegend">Choix cours</string>
     <string name="SpinnerGenre">Choix genre</string>
     <string name="SpinnerTaille">Choix taille</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="message_envoyer">Message à envoyer</string>
 
     <string-array name="Cours">
         <item>XML</item>
@@ -65,4 +67,11 @@
         <item>XL</item>
         <item>XXL</item>
     </string-array>
+    <string name="title_activity_tab_entreprise">Entreprise</string>
+    <string name="title_activity_tab_etudiant">Etudiant</string>
+
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

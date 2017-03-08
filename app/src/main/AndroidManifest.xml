@@ -14,6 +14,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <application
+        android:name=".override.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/logo_anem_png"
         android:label="@string/app_name"
@@ -56,8 +57,24 @@
         <activity android:name=".Etudiant.EtudiantActivity" />
         <activity android:name=".Stage.StageActivity" />
         <activity android:name=".Shop.ShopActivity" />
-        <activity android:name=".Entreprise.NewEntrepriseActivity"></activity>
-        <activity android:name=".Main.NotifyActivity"></activity>
+        <activity android:name=".Entreprise.NewEntrepriseActivity" />
+        <activity android:name=".Main.NotifyActivity" />
+        <activity android:name=".Message.MessageActivity" />
+        <activity
+            android:name=".Entreprise.TabEntrepriseActivity"
+            android:label="@string/title_activity_tab_entreprise" />
+        <activity android:name=".Entreprise.NewEntrepriseContainer" />
+        <activity android:name=".Stage.TabStageActivity"
+            android:label="@string/title_activity_tab_entreprise"
+            android:parentActivityName=".Main.MainActivity">
+        </activity>
+        <activity
+            android:name=".Etudiant.TabEtudiantActivity"
+            android:label="@string/title_activity_tab_etudiant"
+            android:parentActivityName=".Etudiant.EtudiantActivity" />
+        <activity android:name=".Entreprise.NewEntrepriseContainer" />
+        <activity android:name=".Etudiant.NewEtudiantContainer" />
+        <activity android:name=".Stage.NewStageActivity"></activity>
     </application>
 
 </manifest>

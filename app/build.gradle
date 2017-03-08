@@ -5,6 +5,7 @@ android {
     buildToolsVersion "24.0.3"
     defaultConfig {
         applicationId "com.example.rouge.anem"
+        multiDexEnabled true
         minSdkVersion 21
         targetSdkVersion 24
         versionCode 1
@@ -28,6 +29,7 @@ dependencies {
     compile 'com.google.android.gms:play-services:9.6.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:support-v13:+'
     testCompile 'junit:junit:4.12'
     compile files('libs/gcm.server.jar')
 }

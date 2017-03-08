@@ -1,0 +1,31 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Liste des compétences mises en oeuvre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelComp"
+        android:textSize="18sp"
+        android:paddingBottom="10sp"/>
+    <TextView
+        android:text="Aucune compétences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textComp"
+        android:textSize="14sp"
+        android:paddingBottom="10sp"/>
+    <SearchView android:id="@+id/search" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" android:iconifiedByDefault="false" >
+    </SearchView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/competences"/>
+
+</LinearLayout>

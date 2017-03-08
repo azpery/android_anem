@@ -1,5 +1,7 @@
 package com.example.rouge.anem.Main;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +24,7 @@ import android.view.View;
 
 import com.example.rouge.anem.Entreprise.EntrepriseActivity;
 import com.example.rouge.anem.Etudiant.EtudiantActivity;
+import com.example.rouge.anem.Message.MessageActivity;
 import com.example.rouge.anem.R;
 import com.example.rouge.anem.Shop.ShopActivity;
 import com.example.rouge.anem.Stage.StageActivity;
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, NotifyActivity.class);
+                Intent i = new Intent(MainActivity.this, MessageActivity.class);
                 startActivity(i);
             }
         });
@@ -64,6 +67,10 @@ public class MainActivity extends AppCompatActivity
         }
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.flFragments, new WelcomePageActivity())
+                .commit();
     }
 
     private SharedPreferences getGcmPreferences(Context context) {
@@ -115,25 +122,20 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_boutique) {
 
-            startActivity(new Intent(MainActivity.this, ShopActivity.class));
-
+            openShop();
         } else if (id == R.id.nav_gallery) {
-            Intent j = new Intent(MainActivity.this, EtudiantActivity.class);
-            startActivity(j);
+            openEtudiant();
         } else if (id == R.id.nav_slideshow) {
-            Intent i = new Intent(MainActivity.this, EntrepriseActivity.class);
-            startActivity(i);
+            openEntreprise();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_who) {
 
         } else if (id == R.id.stage) {
-            Intent i = new Intent(MainActivity.this, StageActivity.class);
-            startActivity(i);
+            openStage();
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -163,5 +165,23 @@ public class MainActivity extends AppCompatActivity
 
             }
         }
+    }
+
+    public void openShop(){
+        startActivity(new Intent(MainActivity.this, ShopActivity.class));
+    }
+    public void openEtudiant(){
+        Intent j = new Intent(MainActivity.this, EtudiantActivity.class);
+        startActivity(j);
+    }
+    public void openEntreprise(){
+        Intent i = new Intent(MainActivity.this, EntrepriseActivity.class);
+        startActivity(i);
+    }
+    public void openStage(){
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.flFragments, new StageActivity())
+                .commit();
     }
 }

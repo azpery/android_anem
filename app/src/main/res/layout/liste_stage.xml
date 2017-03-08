@@ -6,14 +6,18 @@
     <TextView
         android:id="@+id/vueNom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingLeft="5dip"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:paddingBottom="10sp"/>
     <TextView
-        android:id="@+id/vueAdresse"
+        android:id="@+id/vueCompetences"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingLeft="5dip"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textColor="@color/common_google_signin_btn_text_light_focused"
+        />
 
 </LinearLayout>

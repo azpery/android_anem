@@ -1,5 +1,9 @@
 package com.example.rouge.anem.Entity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.StringTokenizer;
+
 /**
  * Created by rouge on 23/11/2016.
  */
@@ -17,6 +21,14 @@ public class Produit {
         this.prix = prix;
         this.prixAdherent = prixAdherent;
         this.urlImange = urlImange;
+    }
+
+    public static ArrayList<Produit> getProduitsFromWS(ArrayList<HashMap<String,Object>> ws){
+        ArrayList<Produit> e = new ArrayList<Produit>();
+        for (HashMap<String, Object> item: ws) {
+            e.add(new Produit(Integer.parseInt((String)item.get("id")), (String)item.get("nom"), (float)item.get("prix"), (float)item.get("prixAdherent"), (String)item.get("urlImange")));
+        }
+        return e;
     }
 
     public int getId() {

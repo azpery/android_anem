@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.rouge.anem.Entity.Utilisateur;
 import com.example.rouge.anem.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,10 +20,26 @@ import java.util.List;
 public class EtudiantAdapter extends BaseAdapter {
     private List<Utilisateur> listEtudiant;
     private LayoutInflater layoutInflater;
+    private List<Utilisateur> initialListEtudiant;
+
 
     public EtudiantAdapter(Context context, List<Utilisateur> vListEtudiant) {
         layoutInflater = LayoutInflater.from(context);
         listEtudiant = vListEtudiant;
+        setInitialListEtudiant(vListEtudiant);
+    }
+    public void rechercher(String search){
+        this.listEtudiant = new ArrayList<>() ;
+        if(!search.isEmpty()) {
+            for (Utilisateur u : initialListEtudiant) {
+                if (u.getNom() != null && u.getNom().toUpperCase().contains(search.toUpperCase()) || u.getPrenom() != null && u.getPrenom().toUpperCase().contains(search.toUpperCase()) || u.getEmail() != null && u.getEmail().toUpperCase().contains(search.toUpperCase())) {
+                    listEtudiant.add(u);
+                }
+            }
+        }else{
+            listEtudiant = initialListEtudiant;
+        }
+        notifyDataSetChanged();
     }
     @Override
     public int getCount() {
@@ -55,6 +72,15 @@ public class EtudiantAdapter extends BaseAdapter {
     }
     public void setListEtudiant(List<Utilisateur> listEtudiant) {
         this.listEtudiant = listEtudiant;
+    }
+
+    public List<Utilisateur> getInitialListEtudiant() {
+        return initialListEtudiant;
+    }
+
+    public void setInitialListEtudiant(List<Utilisateur> initialListEtudiant) {
+        this.initialListEtudiant = initialListEtudiant;
+        setListEtudiant(initialListEtudiant);
     }
 
     private class ViewHolder {

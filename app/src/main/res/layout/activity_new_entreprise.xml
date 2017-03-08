@@ -14,7 +14,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp">
 
         <TextView
             android:text="Nom de l'entreprise"
@@ -36,7 +37,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp">
         <TextView
             android:text="Numéro de téléphone"
             android:layout_width="wrap_content"
@@ -55,7 +57,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp">
         <TextView
             android:text="Adresse"
             android:layout_width="match_parent"
@@ -69,7 +72,8 @@
             android:ems="10"
             android:id="@+id/adresse"
             android:hint="Adresse"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_marginBottom="10sp"/>
 
         <Button
             android:text="Valider"

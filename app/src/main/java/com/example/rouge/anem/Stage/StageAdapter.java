@@ -45,12 +45,14 @@ public class StageAdapter extends BaseAdapter {
             holder = new StageAdapter.ViewHolder();
             convertView = layoutInflater.inflate(R.layout.liste_stage, null);
             holder.textViewNom = (TextView) convertView.findViewById(R.id.vueNom);
+            holder.textViewCompetences = (TextView) convertView.findViewById(R.id.vueCompetences);
             convertView.setTag(holder);
         } else {
             holder = (StageAdapter.ViewHolder) convertView.getTag();
         }
 
         holder.textViewNom.setText(listStage.get(position).getIntitule());
+        holder.textViewCompetences.setText(listStage.get(position).getCompetenceToString());
         return convertView;
 
     }
@@ -60,5 +62,6 @@ public class StageAdapter extends BaseAdapter {
 
     private class ViewHolder {
         TextView textViewNom;
+        TextView textViewCompetences;
     }
 }

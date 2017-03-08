@@ -46,7 +46,7 @@ public class NotifyActivity extends AppCompatActivity {
             }
         };
         try {
-            Api api = new Api(callback);
+            Api api = new Api(callback, this);
             HashMap<String,String> param = new HashMap<>();
             String prenom = AuthenticatedUser.getInstance().getPrenom();
             String nom = AuthenticatedUser.getInstance().getNom();

@@ -48,4 +48,10 @@
         android:text="Commander"
         android:fontFamily="sans-serif-smallcaps"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextViewvalidcommandPoly" />
+
 </LinearLayout>
